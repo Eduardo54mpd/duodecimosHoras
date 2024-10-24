@@ -1,5 +1,5 @@
 function autoDuodecimo() {
-    let exibeHora = document.getElementById("hora"); // Tag onde algoritmo enviará as saídas (linhas 1-2)
+    let exibeHora = document.getElementById("hora"); // Tag onde algoritmo enviará as saídas (linhas 2-3)
     let exibeMiliduodecimo = document.getElementById("miliduodec");
 
     const agora = new Date(); // Dados de entrada: coleta horas, minutos e segundos do sistema (linhas 5-8)
