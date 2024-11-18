@@ -44,7 +44,7 @@ function autoDuodecimo() {
         if (duodecimo == 0) {
             exibeHora.innerHTML = `<p>É a hora <i>${hora}</i></p>`;
         } else {
-            exibeHora.innerHTML `<p>É 1 duodécimo da hora <i>${hora}</i></p>`;
+            exibeHora.innerHTML = `<p>É 1 duodécimo da hora <i>${hora}</i></p>`;
         }
     } else {
         exibeHora.innerHTML = `<p>São ${duodecimo} duodécimos da hora <i>${hora}</i></p>`;
