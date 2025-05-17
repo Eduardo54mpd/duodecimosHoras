@@ -8,8 +8,10 @@ function autoDuodecimo() {
     let minutos = agora.getMinutes();
     let segundos = agora.getSeconds();
 
-    if (minutos < 10 || segundos < 10) { // Formatação de minutos e segundos (linhas 9-11)
+    if (minutos < 10) { // Formatação de minutos e segundos (linhas 11-16)
         minutos = "0" + minutos;
+    }
+    if (segundos < 10) {
         segundos = "0" + segundos;
     }
     if (horas < 10) { // Formatação de horas
