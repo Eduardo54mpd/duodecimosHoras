@@ -1,11 +1,22 @@
 function autoDuodecimo() {
-    let exibeHora = document.getElementById("hora"); // Tag onde algoritmo enviará as saídas (linhas 1-2)
+    let exibeRelogio = document.getElementById("relogioReal"); // Tag onde algoritmo enviará as saídas (linhas 2-4)
+    let exibeHora = document.getElementById("hora");
     let exibeMiliduodecimo = document.getElementById("miliduodec");
 
     const agora = new Date(); // Dados de entrada: coleta horas, minutos e segundos do sistema (linhas 5-8)
     const horas = agora.getHours();
     const minutos = agora.getMinutes();
     const segundos = agora.getSeconds();
+
+    if (minutos < 10 || segundos < 10) { // Formatação de minutos e segundos (linhas 9-11)
+        minutos = "0" + minutos;
+        segundos = "0" + segundos;
+    }
+    if (horas < 10) { // Formatação de horas
+        horas = "0" + horas;
+    }
+
+    exibeRelogio.innerHTML = `<p>Relógio real: ${horas}:${minutos}:${segundos}</p>`; // Exibe horas, minutos e segundos
 
     const duodecimo = parseInt(minutos / 5); // Conversão de minutos para duodécimos
     const miliduodecimo = parseInt(segundos / 5 ); // Conversão de segundos para miliduodécimos
@@ -49,7 +60,7 @@ function autoDuodecimo() {
     } else {
         exibeHora.innerHTML = `<p>São ${duodecimo} duodécimos da hora <i>${hora}</i></p>`;
     }
-    exibeMiliduodecimo.innerHTML = `Miliduodécimos: ${miliduodecimo}`;
+    exibeMiliduodecimo.innerHTML = `<p>Miliduodécimos: ${miliduodecimo}</p>`;
 }
 
 setInterval(autoDuodecimo, 1000); // Atualiza as medidas a cada 1 segundo (1000 milisegundos)
