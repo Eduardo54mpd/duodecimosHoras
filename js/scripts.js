@@ -4,9 +4,9 @@ function autoDuodecimo() {
     let exibeMiliduodecimo = document.getElementById("miliduodec");
 
     const agora = new Date(); // Dados de entrada: coleta horas, minutos e segundos do sistema (linhas 5-8)
-    const horas = agora.getHours();
-    const minutos = agora.getMinutes();
-    const segundos = agora.getSeconds();
+    let horas = agora.getHours();
+    let minutos = agora.getMinutes();
+    let segundos = agora.getSeconds();
 
     if (minutos < 10 || segundos < 10) { // Formatação de minutos e segundos (linhas 9-11)
         minutos = "0" + minutos;
