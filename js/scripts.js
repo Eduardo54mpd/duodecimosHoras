@@ -34,11 +34,11 @@ function autoDuodecimo() {
     // Cálculo de horas
     let horaConvert = 0;
     if (horas <= 6) {
-        horaConvert = horas + 6;
+        horaConvert = parseInt(horas + 6);
     } else if (horas >= 7 && horas <= 18) {
-        horaConvert = horas - 6;
+        horaConvert = parseInt(horas - 6);
     } else {
-        horaConvert = horas - 18;
+        horaConvert = parseInt(horas - 18);
     }
 
     // Verifica o ciclo
