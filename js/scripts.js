@@ -9,13 +9,13 @@ function autoDuodecimo() {
     let segundos = agora.getSeconds();
 
     if (minutos < 10) { // Formatação de minutos e segundos (linhas 11-16)
-        minutos = "0" + minutos;
+        minutos = Number("0" + minutos);
     }
     if (segundos < 10) {
-        segundos = "0" + segundos;
+        segundos = Number("0" + segundos);
     }
     if (horas < 10) { // Formatação de horas
-        horas = "0" + horas;
+        horas = Number("0" + horas);
     }
 
     exibeRelogio.innerHTML = `<p>Relógio real: ${horas}:${minutos}:${segundos}</p>`; // Exibe horas, minutos e segundos
@@ -34,11 +34,11 @@ function autoDuodecimo() {
     // Cálculo de horas
     let horaConvert = 0;
     if (horas <= 6) {
-        horaConvert = parseInt(horas + 6);
+        horaConvert = horas + 6;
     } else if (horas >= 7 && horas <= 18) {
-        horaConvert = parseInt(horas - 6);
+        horaConvert = horas - 6;
     } else {
-        horaConvert = parseInt(horas - 18);
+        horaConvert = horas - 18;
     }
 
     // Verifica o ciclo
