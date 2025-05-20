@@ -8,17 +8,11 @@ function autoDuodecimo() {
     let minutos = agora.getMinutes();
     let segundos = agora.getSeconds();
 
-    if (minutos < 10) { // Formatação de minutos e segundos (linhas 11-16)
-        minutos = Number("0" + minutos);
-    }
-    if (segundos < 10) {
-        segundos = Number("0" + segundos);
-    }
-    if (horas < 10) { // Formatação de horas
-        horas = Number("0" + horas);
-    }
-
-    exibeRelogio.innerHTML = `<p>Relógio real: ${horas}:${minutos}:${segundos}</p>`; // Exibe horas, minutos e segundos
+    let exibeHoras = horas < 10 ? "0" + horas : horas; // Formata horas para 2 dígitos  
+    let exibeMinutos = minutos < 10 ? "0" + minutos : minutos; // Formata minutos para 2 dígitos
+    let exibeSegundos = segundos < 10 ? "0" + segundos : segundos; // Formata segundos para 2 dígitos
+    
+    exibeRelogio.innerHTML = `<p>${exibeHoras}:${exibeMinutos}:${exibeSegundos}</p>`; // Exibe horas, minutos e segundos no formato 00:00:00
 
     const duodecimo = parseInt(minutos / 5); // Conversão de minutos para duodécimos
     const miliduodecimo = parseInt(segundos / 5 ); // Conversão de segundos para miliduodécimos
