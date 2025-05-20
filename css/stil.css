@@ -3,52 +3,69 @@ body {
     background-position: center;
     background-size: cover;
     text-align: center;
-    font: normal 30pt Trebuchet Ms;
-} section {
+    font: normal 30pt "Trebuchet MS", sans-serif;
+    margin: 0;
+}
+
+section {
     background-color: rgba(244, 244, 244, 0.6);
     border-radius: 12px;
     border: 3px double #333;
     width: 95%;
     margin: auto;
-    display: inline-flex;
-} h1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
     background-color: rgba(244, 244, 244, 0.6);
     color: #111;
-    background-size: auto;
     border: 3px double #333;
     border-radius: 12px;
-} footer {
+    padding: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+footer {
     background-color: rgba(244, 244, 244, 0.6);
+    max-width: 90%;
     width: 612px;
     margin: auto;
     border-radius: 12px;
     border: 3px double #333;
-} .exibe {
-    align-items: center;
-    justify-self: unset;
+    padding: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
+.exibe {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+}
+
+/* Responsividade para telas pequenas */
 @media screen and (max-width: 500px) {
     body {
-        font: normal 15pt Calibri;
-        margin: 0 auto;
-    } section {
-        background-color: rgba(244, 244, 244, 0.6);
-        border-radius: 12px;
-        border: 3px double #333;
-    } h1 {
-        background-color: rgba(244, 244, 244, 0.6);
-        color: #111;
-        background-size: auto;
-        border: 3px double #333;
-        border-radius: 12px;
-    } .exibe {
-        margin: 0;
-    } footer {
-        background-color: rgba(244, 244, 244, 0.6);
-        width: 312px;
-        margin: auto;
-        border-radius: 12px;
-        border: 3px double #333;
+        font: normal 15pt Calibri, sans-serif;
     }
+
+    section {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    footer {
+        width: 100%;
+    }
+}
+
+/* Transições suaves para elementos */
+* {
+    transition: all 0.3s ease-in-out;
 }
