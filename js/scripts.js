@@ -11,14 +11,14 @@ function autoDuodecimo() {
     let exibeHoras = horas < 10 ? "0" + horas : horas; // Formata horas para 2 dígitos  
     let exibeMinutos = minutos < 10 ? "0" + minutos : minutos; // Formata minutos para 2 dígitos
     let exibeSegundos = segundos < 10 ? "0" + segundos : segundos; // Formata segundos para 2 dígitos
-    
-    exibeRelogio.innerHTML = `<p>${exibeHoras}:${exibeMinutos}:${exibeSegundos}</p>`; // Exibe horas, minutos e segundos no formato 00:00:00
+
+    exibeRelogio.innerHTML = `Relógio local/do sistema:<br><i>${exibeHoras}:${exibeMinutos}:${exibeSegundos}</i>`; // Exibe horas, minutos e segundos no formato 00:00:00
 
     const duodecimo = parseInt(minutos / 5); // Conversão de minutos para duodécimos
     const miliduodecimo = parseInt(segundos / 5 ); // Conversão de segundos para miliduodécimos
 
     // Conversão de horas em número para horas em extenso 
-    const horaExtens = {
+    const horaExtenso = {
         1: 'primeira', 2: 'segunda', 3: 'terceira',
         4: 'quarta', 5: 'quinta', 6: 'sexta',
         7: 'sétima', 8: 'oitava', 9: 'nona',
@@ -44,19 +44,19 @@ function autoDuodecimo() {
         }
     }
 
-    const hora = ciclo(horaExtens[horaConvert]); // Retoma dados a partir do dicionário e do valor do cálculo de horas
+    const hora = ciclo(horaExtenso[horaConvert]); // Retoma dados a partir do dicionário e do valor do cálculo de horas
 
     // Possíveis saídas dependendo do valor dos duodécimos
     if (duodecimo < 2) {
         if (duodecimo == 0) {
-            exibeHora.innerHTML = `<p>É a hora <i>${hora}</i></p>`;
+            exibeHora.innerHTML = `<p>Relógio bíblico (adaptado):<br>É a hora <i>${hora}</i></p>`;
         } else {
-            exibeHora.innerHTML = `<p>É 1 duodécimo da hora <i>${hora}</i></p>`;
+            exibeHora.innerHTML = `<p>Relógio bíblico (adaptado):<br>É 1 duodécimo da hora <i>${hora}</i></p>`;
         }
     } else {
-        exibeHora.innerHTML = `<p>São ${duodecimo} duodécimos da hora <i>${hora}</i></p>`;
+        exibeHora.innerHTML = `<p>Relógio bíblico (adaptado):<br>São ${duodecimo} duodécimos da hora <i>${hora}</i></p>`;
     }
-    exibeMiliduodecimo.innerHTML = `<p>Miliduodécimos: ${miliduodecimo}</p>`;
+    exibeMiliduodecimo.innerHTML = `<p>Miliduodécimos:<br>${miliduodecimo}</p>`;
 }
 
 setInterval(autoDuodecimo, 1000); // Atualiza as medidas a cada 1 segundo (1000 milisegundos)
