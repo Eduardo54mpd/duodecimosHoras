@@ -17,9 +17,23 @@
         </h3>
     </header>
     <section id="exibi">
-        <div id="relogioReal" class="exibe">Relógio real</div>
-        <div id="hora" class="exibe">Hora aqui</div> <!-- Exemplo de saída: São 8 duodécimos da hora terceira (diurna) -->
-        <div id="miliduodec" class="exibe">Miliduodécimos aqui</div> <!-- Saída dos miliduodécimos -->
+        <div class="ContainerRelogioReal">
+            <div id="relogioReal" class="exibe">Relógio real</div>
+            <div class="relogio-analogico" id="relogioAnalogicoReal">
+                <div class="ponteiro hora" id="horaReal"></div>
+                <div class="ponteiro minuto" id="minutoReal"></div>
+                <div class="ponteiro segundo" id="segundoReal"></div>
+            </div>
+        </div>
+        <div class="ContainerRelogioBiblico">
+            <div id="hora" class="exibe">Hora aqui</div> <!-- Exemplo de saída: São 8 duodécimos da hora terceira (diurna) -->
+            <div id="miliduodec" class="exibe">Miliduodécimos aqui</div> <!-- Saída dos miliduodécimos -->
+            <div class="relogio-analogico" id="relogioAnalogicoBiblico">
+                <div class="ponteiro hora" id="horaBiblica"></div>
+                <div class="ponteiro minuto" id="minutoBiblico"></div>
+                <div class="ponteiro segundo" id="segundoBiblico"></div>
+            </div>
+        </div>
     </section>
     <footer>
         <p>Eduardo M. Machado. 2023. &copy; Todos os direitos reservados.</p>
