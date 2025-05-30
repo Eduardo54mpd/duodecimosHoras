@@ -57,6 +57,24 @@ function autoDuodecimo() {
         exibeHora.innerHTML = `<p>Relógio bíblico (adaptado):<br>São ${duodecimo} duodécimos da hora <i>${hora}</i></p>`;
     }
     exibeMiliduodecimo.innerHTML = `<p>Miliduodécimos:<br>${miliduodecimo}</p>`;
+
+    // Atualiza relógio analógico real
+    let grauSegundo = segundos * 6;              // 360/60
+    let grauMinuto = minutos * 6 + segundos * 0.1;
+    let grauHora = ((horas % 12) + minutos / 60) * 30;
+
+    document.getElementById("segundoReal").style.transform = `translateX(-50%) rotate(${grauSegundo}deg)`;
+    document.getElementById("minutoReal").style.transform = `translateX(-50%) rotate(${grauMinuto}deg)`;
+    document.getElementById("horaReal").style.transform = `translateX(-50%) rotate(${grauHora}deg)`;
+
+    // Atualiza relógio bíblico adaptado
+    let grauBiblicoHora = (horaConvert % 12) * 30 + duodecimo * 2.5; // 12 horas e 12 duodécimos
+    let grauBiblicoMinuto = duodecimo * 30; // 12 duodécimos
+    let grauBiblicoSegundo = miliduodecimo * 30; // 12 miliduodécimos
+
+    document.getElementById("horaBiblica").style.transform = `translateX(-50%) rotate(${grauBiblicoHora}deg)`;
+    document.getElementById("minutoBiblico").style.transform = `translateX(-50%) rotate(${grauBiblicoMinuto}deg)`;
+    document.getElementById("segundoBiblico").style.transform = `translateX(-50%) rotate(${grauBiblicoSegundo}deg)`;
 }
 
 setInterval(autoDuodecimo, 1000); // Atualiza as medidas a cada 1 segundo (1000 milisegundos)
