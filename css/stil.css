@@ -1,7 +1,5 @@
 body {
-    background-image: url("hora.jpg");
-    background-position: center;
-    background-size: cover;
+    background-color: #54a2f4;
     text-align: center;
     font: normal 30pt "Trebuchet MS", sans-serif;
     margin: 0;
@@ -12,7 +10,7 @@ section {
     border-radius: 12px;
     border: 3px double #333;
     width: 90%;
-    margin: 0 auto 3px;
+    margin: 0.5rem auto;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -24,7 +22,7 @@ section {
 
 header {
     width: 90%;
-    margin: 3px auto 3px;
+    margin: 1rem auto 0.5rem;
     background-color: rgba(244, 244, 244, 0.6);
     color: #111;
     border: 3px double #333;
@@ -47,8 +45,7 @@ h3 {
 footer {
     background-color: rgba(244, 244, 244, 0.6);
     width: 90%;
-    margin: 3px auto;
-    margin: 0 auto;
+    margin: 0.5rem auto 1rem;
     border-radius: 12px;
     border: 3px double #333;
     padding: 0.5rem;
@@ -57,6 +54,54 @@ footer {
 
 .exibe {
     padding: 0.5rem;
+}
+
+* {
+    transition: all 0.3s ease-in-out;
+}
+.relogio-analogico {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border: 10px solid #333;
+    border-radius: 50%;
+    margin: 1rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+}
+
+.ponteiro {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+    transform: translateX(-50%) rotate(0deg);
+    border-radius: 5px;
+}
+
+.hora {
+    width: 6px;
+    height: 50px;
+    background: #222;
+}
+
+.minuto {
+    width: 4px;
+    height: 70px;
+    background: #444;
+}
+
+.segundo {
+    width: 2px;
+    height: 90px;
+    background: red;
+}
+
+.ContainerRelogioReal, .ContainerRelogioBiblico {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 /* Responsividade para telas pequenas */
@@ -83,7 +128,10 @@ footer {
     }
 }
 
-
-* {
-    transition: all 0.3s ease-in-out;
+/* Responsividade para telas médias */
+@media screen and (min-width: 501px) and (max-width: 800px) {
+    .ContainerRelogioReal, .ContainerRelogioBiblico {
+        flex-direction: column;
+        align-items: center;
+    }
 }
